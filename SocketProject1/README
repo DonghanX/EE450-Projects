@@ -1,0 +1,92 @@
+
+Name: Donghan Xia
+Student ID: 7022775451
+
+Program Description
+
+1.What I have done in the project
+
+All the programming work (except those from Beej's Guide mentioned in the Function Header comments) includes:
+    (1) Implement server (localhost) that is able to read and store all the city-state mapping information 
+	from the given list.txt file, receive city names sent from remote clients, query the corresponding
+	state name to city name, send the query result to remote clients.
+
+    (2) Implement client that is able to input a city name from terminal, send the input city name to
+	localhost, and receive contents sent from localhost.
+
+All the comments that helps understand the principle of the programs.
+
+2.Code files and their responsibilities
+
+servermain.h
+    The header file that contains the declarations of member functions in servermain.cpp.
+
+servermain.cpp
+    (1) Read the datas each line from list.txt using infile stream, retrieve each state name and split each
+	city-name list in a single line.
+
+    (2) Store all the information into container: std::map<std::string, std::string>, where the element key
+	is city name and the value is corresponding state name. 
+
+    (3) Bootup server to prepare for the incoming connections from remote clients and keep waiting until the 
+	manually termination.
+
+    (4) Establish TCP connections between localhost and remote client and create a child process for each 
+	connection to support individually bilateral communications between main server and each client.
+
+    (5) When receiving contents (city name) sent from client through TCP connection, server will query the value 
+	to the key in the map I have mentioned above, in order to retrieve the state name.
+
+    (6) Send search result or "Not Found" identifier to corresponding client according to the query result of (5).
+
+    (7) Print on-screen messages according to project requirements in all above steps.
+
+client.h
+    The header file that contains the declarations of member functions in client.cpp.
+
+client.cpp
+    (1) Bootup client to prepare for connecting to localhost and then establish TCP connection.
+
+    (2) Input city name which might include whitespace, i.g. "Los Angeles" "New York City"
+
+    (3) Send input city name to localhost through TCP connection and wait for the contents sent from localhost.
+
+    (4) Print on-screen messages according to project requirements in all above steps.
+
+3. The format of all the messages exchanged
+    (1) The contents (messages) to be sent is in c-style string format, which has be converted from Cpp-style string, 
+    as we all know, std::string, to char* using std::string::c_str() function. That is because In basically use 
+    std::string to store input city name and search results for brevity.
+
+    (2) Similarly, the Contents (messages) to be received is in c-style string format, which should be passed into
+    vector<char> container to serve as a more C++ style buffer.
+
+4.Idiosyncrasy
+    (1) The project utilize several C++11 features, such as range iterator to iterate std::vector.
+
+    (2) The project use std::map to serve as the container of element<city_name, state_name>. There are several 
+	advantages of choosing std::map instead of other non-map containers. Firstly, map provides only mapping value
+	to a certain key, which is perfectly matched with city-state mapping conditions that there is no overlap for
+	city names among different states. In other words, one city, one state. Secondly, std::map is implemented
+	with Red-black Tree, which typically gurantees insertion and searching in O(logn) time. Thus, performance
+	of the program can be slightly improved. However, if we use std::unordered_map, the searching time can be
+	further improved to O(1), because std::unodered_map (added in C++ 11) is implemented with Hash Table.Therefore, 
+	I will finetune the code and use std::underored_map instead in the future.
+
+    (3) Notice that the client might fail to establish TCP connections with localhost if it cannot retrieve a valid
+	socket addressinfo, or if the client is executed before the servermain. Also, since I have define the backlog
+	of accept() as 5, the number of clients that the server is able to support is up to 5. If there are more than
+	5 clients connects to the server simuiltaneously, the client might fail.
+
+5.Reused Code
+    I have used several Codes and thoughts from Beej's Guide (https://beej.us/guide/bgnet/pdf/bgnet_usl_c_1.pdf) in 
+    Chapter 5/6/9 as a reference but not directly copied, to help me better understand socket programming and some 
+    functions in socket libraries. These reuesed codes have been already identified with function header comments.
+    
+
+
+
+
+
+
+

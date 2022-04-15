@@ -1,0 +1,93 @@
+
+Name: Donghan Xia
+Student ID: 7022775451
+
+Program Description
+
+1.What I have done in the project
+
+All the programming work (except those from Beej's Guide mentioned in the Function Header comments) includes:
+    (1) Implement two backend servers that are able to read and store all the state-cities mapping information 
+	from the given dataA.txt/dataB.txt file, receive state name sent from main server, query the correspon
+	-ding cities, and send the query result to main server.
+
+    (2) Implement main server that is able to input a city name from terminal, find the backend server that is
+	responsible for the state name and receive the query result from corresponding backend servers.
+
+All the comments that helps understand the principle of the programs.
+
+2.Code files and their responsibilities
+
+servermain.h
+    The header file that contains the declarations of member functions in servermain.cpp.
+
+servermain.cpp
+    (1) Send requests to each backend server and receive their responsibilities of state.
+
+    (2) Store the state-backendId mapping information in the std container map.
+
+    (3) Receive input state name from terminal and decide which backend should be requested.
+
+    (4) Send the state name to corresponding backend server and receive its response with a list of cities in
+	the state.
+
+serverA.h
+    The header file that contains the declarations of member functions in serverA.cpp.
+
+serverA.cpp
+    (1) Read the datas each line from dataA.txt using infile stream.
+
+    (2) Store all the information into std container std::map<std::string, std::set<std::string>>, where the element key
+	is state name and the value is the set of corresponding cities. The std container set is utilized to ensure
+	the cities are all distinct.
+
+    (3) Send the responsible cities to main server when it sends responsibility request to server A.
+
+    (4) Receive state name sent from main server and query the map to find all distinct cities in the state. Then 
+	server A sends the result to main server.
+
+serverB.h
+    The header file that contains the declarations of member functions in serverB.cpp.
+
+serverB.cpp
+    Actually does the same thing as the serverA.cpp. However, the port number for bind() and the original data file
+    is different from serverA.cpp.
+
+3. The format of all the messages exchanged
+    (1) The contents (messages) to be sent is in c-style string format, which has be converted from Cpp-style string, 
+    	as we all know, std::string, to char* using std::string::c_str() function. That is because I basically use 
+    	std::string to store input city name and search results for brevity.
+
+    (2) Similarly, the Contents (messages) to be received is in c-style string format, which should be passed into
+    	vector<char> container to serve as a more C++ style buffer.
+
+    (3) In order to distinguish the first request sent from mainserver for state responsibilities from the ordinary
+	sending request, I pre-defined a request signal string, which has content of "###request###". When backend 
+	server receives content like this, it will send its responsibility of state to the main server rather than
+	consider the received content as a state name for querying.
+
+4.Idiosyncrasy
+    (1) The project utilize several C++11 features. For instance, range iterator.
+
+    (2) The project use std::map to serve as the container of element<state_name, set<city_name>>. There are several 
+	advantages of choosing std::map instead of other non-map containers. Firstly, map provides only mapping value
+	to a certain key, which is perfectly matched with city-state mapping conditions that there is no overlap for
+	city names among different states. In other words, one city, one state. Secondly, std::map is implemented
+	with Red-black Tree, which typically gurantees insertion and searching in O(logn) time. Thus, performance
+	of the program can be slightly improved. However, if we use std::unordered_map, the searching time can be
+	further improved to O(1), because std::unodered_map (added in C++ 11) is implemented with Hash Table.Therefore, 
+	I will finetune the code and use std::underored_map instead in the future.
+
+    (3) All the cpp files is Global-paramater-free, which makes the program more brief and readable. I think the increased
+	time by frequently passing parameters of function is acceptable when it compares with the cost of using global
+	parameters.
+
+    (4) The query process will fail if the data file contains the carriage return character at the end of each line (which
+	could be recognized by using vi to look through the data file if the data file is edited with enter key in WinOS).
+	In that case, the main server could not find the matching key in the map that stores the information of mapping
+	state name to backend server id.
+
+5.Reused Code
+    I have used several codes and thoughts from Beej's Guide (https://beej.us/guide/bgnet/pdf/bgnet_usl_c_1.pdf) in 
+    Chapter 5/6/9 as a reference but not directly copied, which helps me have a better understanding of socket programming
+    and some functions in socket libraries. These pieces of re-used codes have been already identified with function header comments.

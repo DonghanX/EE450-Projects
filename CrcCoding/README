@@ -1,0 +1,99 @@
+
+Name: Donghan Xia
+Student ID: 7022775451
+
+Program Description
+
+1.What I have done in the assignment
+
+All the programming work includes:
+    (1) Implement CRC transmitter and receiver using binary mod 2 division method.
+
+    (2) Implement checksum transmitter and receiver using one-byte decimal method.
+
+    (3) Compare the performance of CRC and checksum by introducing random error bits to
+	transmitted datas and check if CRC and checksum are able to detect the errors.
+
+All the comments that helps understand the principle of the programs.
+
+2.Code files and their responsibilities
+
+crc_tx.h:
+    The header file that contains the declarations of member functions in crc_tx.cpp.
+
+crc_tx.cpp:
+    Implement CRC to the source datas. The procedures are as follows:
+    (1) Read the source data each line from dataTx.txt using infile stream.
+
+    (2) Append zeros to source data to prepare for mod 2 division.
+
+    (3) Use CRC-12 generator data to operate bitwise mod 2 division to the source data.
+
+    (4) Print the encoded datas in terminal.
+
+crc_rx.h:
+    The header file that contains the declarations of member functions in crc_rx.cpp.
+
+crc_rx.cpp:
+    Check whether the CRC received data should be accepted. The procedures are as follows:
+    (1) Read the received data each line from dataRx.txt using infile stream.
+
+    (2) Use CRC-12 generator data to operate bitwise mod 2 division to the received data
+        and check if the remainder is equal to zero. The received data should be accepted 
+        only if the remainder is equal to zero.
+
+    (3) Print the "pass" or "not pass" in terminal according to the remainder.
+
+crc_vs_checksum.h:
+    The header file that contains the declarations of member functions in crc_vs_checksum.cpp.
+
+crc_vs_checksum.cpp:
+    Implement CRC/checksum to get the encoded datas, introduce random error bits to the encoded 
+    datas and then check if the encoded datas should be accepted in CRC/checksum check. For CRC
+    part, the procedures (except introducing error bits) are similar to the crc_tx and crc_rx 
+    above. For checksum, the procedures are as follows:
+    (1) Read the combination data each line from dataVs.txt using infile stream. Then split the
+        combination data into source data section and error bit data section by character white-
+        space.
+
+    (2) Implement checksum to the source data using one-byte decimal method. First split the given
+	source data into several 8-byte sections and convert them into decimal. Then calculate the
+	sum of the decimal datas and divide each of them by 2^8. The quotient and remainder of the
+	above division are used for getting the complementary decimal checksum. Finally convert 
+	the decimal checksum to bianry checksum.
+
+    (3) Introduce error bits to the encoded data using bitwise XOR operation between encoded data
+	and error bit data.
+
+    (4) Calculate the checksum of the source data section of encoded data and compare it to the 
+	checksum section of encoded data. The data should be accepted only if the former checksum
+	is equal to the latter checksum.
+
+    (5) Print the "pass" or "not pass" in terminal according to the two checksum datas.
+
+3.Idiosyncrasy
+    (1) The project is designed with "Null Pointer Safty" concerns. The project should not have NPE
+	issues even if the source data files like dataTx.txt is empty.
+
+    (2) The project utilize several C++11 features like erase-type lambda function to make functions like
+	ReadSourceData() more readable and make them decoupled from actual implementation CRC/checksum 
+	functions. However, the use of erase-type lambda as pass by params will induce runtime compared 
+	to templace method, especially when there are numerous source data and these functions are called 
+	numerous time. I will fine-tune the code and replace the erase-type lambda with template in the 
+	future (if possible).
+
+    (3) Some functions(e.g. EncodeCrc()) defined in different cpp data actually do the same jobs, 
+	which makes some part in the source code somewhat redundant. I will extract these redundant 
+	function to one cpp file to serve as the library/module and rewrite makefile to make the source 
+	code clean and more readable.
+
+4.Reused Code
+    No. However, Some functions(e.g. EncodeCrc()) defined in different cpp data actually do the same jobs.
+    For example, I defined and wrote EncodeCrc() function in crc_tx.cpp and also defined and wrote the same
+    thing in crc_vs_checksum.cpp.
+    
+
+
+
+
+

@@ -1,0 +1,100 @@
+Alabama
+Birmingham,Florence,Marion,Scottsboro,Tuscaloosa
+Alaska
+Anchorage,Cordova,Fairbanks,Juneau,Kodiak
+Arizona
+Phoenix,Bisbee,Casa Grande,Chandler,Flagstaff,Glendale,Tucson,Phoenix
+Arkansas
+Blytheville,Camden,Conway,Harrison,Little Rock,Pine Bluff
+California
+Anaheim,Los Angeles,Arcadia,Burbank,Concord,El Centro,Fairfield,Fremont,Fullerton,Glendale,Inglewood,Irvine,Long Beach,Los Angeles,Malibu,Napa,Martinez,Marysville,Menlo Park,Merced,Oakland,Oceanside,Ojai,Palo Alto,Pasadena,San Diego,San Fernando,San Francisco,San Gabriel,Santa Cruz
+Colorado
+Alamosa,Aspen,Aurora,Boulder,Brighton,Canon City,Central City,Colorado Springs,Denver,Durango,Englewood,Estes Park,Fort Collins,Fort Morgan,Georgetown,Glenwood Springs,Golden,Grand Junction,Greeley,Gunnison,Pueblo,Silverton,Steamboat Springs,Sterling
+Connecticut
+Ansonia,Berlin,Branford,Bridgeport,Bristol,Danbury,Derby,East Hartford,East Haven,Enfield,Fairfield,Farmington,Greenwich,Groton,Guilford,Hamden,Hartford,Lebanon,Litchfield,Manchester,New Haven,New London,North Haven,Norwalk,Norwich,Stamford,Stonington
+Delaware
+Dover,Lewes,Milford,New Castle,Newark,Smyrna,Wilmington
+Florida
+Apalachicola,Boca Raton,Bradenton,Cape Coral,Clearwater,Daytona Beach,Fort Lauderdale,Fort Myers,Homestead,Jacksonville,Key West,Miami,Miami Beach,Naples,New Smyrna Beach,Ocala,Orlando,Tallahassee
+Georgia
+Americus,Andersonville,Athens,Atlanta,Bainbridge,Blairsville,Brunswick,Calhoun,Carrollton,Columbus,Dahlonega,Dalton,Darien,Decatur,Douglas,East Point,Fitzgerald,Fort Valley,Gainesville,La Grange,Macon,Marietta,Milledgeville,Plains,Rome,Savannah
+Hawaii
+Hanalei,Hilo,Honaunau,Honolulu,Kahului,Kaneohe,Wahiawa,Wailuku
+Idaho
+Blackfoot,Boise,Bonners Ferry,Caldwell,Idaho City,Idaho Falls,Kellogg,Lewiston,Pocatello,Priest River,Rexburg
+Illinois
+Alton,Arlington Heights,Arthur,Belleville,Calumet City,Carbondale,Carlinville,Carthage,Centralia,Champaign,Chicago,Chicago Heights,Cicero,Decatur,DeKalb,Freeport,Galena,Galesburg,Glenview,La Salle,Moline
+Indiana
+Anderson,Bedford,Bloomington,Connersville,Crawfordsville,East Chicago,Elkhart,Fort Wayne,French Lick,Gary,Indianapolis,South Bend,Terre Haute,West Lafayette
+Iowa
+Ames,Boone,Burlington,Cedar Falls,Cedar Rapids,Cherokee,Clinton,Des Moines,Fairfield,Fort Dodge,Grinnell,Indianola,Iowa CityKeokuk,Mason City,Mount Pleasant,Muscatine
+Kansas
+Arkansas City,Atchison,Garden City,Ottawa,Topeka,Wichita
+Kentucky
+Ashland,Barbourville,Bardstown,Bowling Green,Lexington,Louisville
+Louisiana
+Abbeville,Bastrop,Baton Rouge,Lafayette,Monroe,New Orleans
+Maine
+Auburn,Augusta,Bangor,Bar Harbor,Brunswick,Farmington
+Maryland
+Aberdeen,Annapolis,Baltimore,College Park
+Massachusetts
+Abington,Adams,Amesbury,Amherst,Andover,Arlington,Attleboro,Boston,Duxbury,Fitchburg
+Michigan
+Adrian,Alma,Ann Arbor,Detroit,East Lansing,Grand Rapids,Lansing
+Minnesota
+Albert Lea,Alexandria,Eveleth,Minneapolis,Saint Paul
+Mississippi
+Bay Saint Louis,Corinth,Greenville,Jackson,Oxford,Yazoo City
+Missouri
+Boonville,Branson,Cape Girardeau,Carthage,Columbia,HannibalIndependence,Jefferson City,Joplin,Kansas City
+Montana
+Anaconda,Billings,Bozeman,Butte,Helena,Missoula
+Nebraska
+Beatrice,Bellevue,Boys Town,Hastings,Lincoln,Omaha
+Nevada
+Boulder City,Carson City,Elko,Las Vegas,Reno
+New Hampshire
+Berlin,Claremont,Concord,Derry,Dover,Durham,Hanover
+New Jersey
+Asbury Park,Atlantic City,Bayonne,Bloomfield,Camden,Fort Lee,Glassboro,Mount Holly,New Brunswick,Newark,Trenton,Union,Union City
+New Mexico
+Acoma,Alamogordo,Albuquerque,Artesia,Belen,Carlsbad,Clovis,Deming,Farmington
+New York
+Albany,Amsterdam,Babylon,Binghamton,Bronx,Brooklyn,Buffalo,Coney Island,Cooperstown,Geneva,Manhattan,New York City,Rochester,Rome
+North Carolina
+Asheboro,Asheville,Boone,Burlington,Chapel Hill,Charlotte,Raleigh
+North Dakota
+Bismarck,Devils Lake,Fargo
+Ohio
+Akron,Cincinnati,Cleveland,Toledo,Youngstown
+Oklahoma
+Ada,Chickasha,Oklahoma City,Tulsa
+Oregon
+Beaverton,Eugene,Portland
+Pennsylvania
+Abington,Allentown,Bethlehem,Gettysburg,Philadelphia,Pittsburgh
+Rhode Island
+Bristol,North Kingstown,Providence
+South Carolina
+Aiken,Camden,Charleston,Columbia,Darlington,Myrtle Beach
+South Dakota
+Pierre
+Tennessee
+Chattanooga,Knoxville,Memphis,Nashville
+Texas
+Amarillo,Austin,Dallas,El Paso,Fort Worth,Houston,San Antonio,Waco
+Utah
+Cedar City,Moab,Ogden,Provo,Salt Lake City
+Vermont
+Burlington,Montpelier
+Virginia
+Alexandria,Bristol,Charlottesville,Lexington,Richmond,Roanoke
+Washington
+Aberdeen,Bellingham,Oak Harbor,Olympia,Seattle,Spokane,Tacoma
+West Virginia
+Clarksburg,Huntington,Princeton
+Wisconsin
+Ashland,Baraboo,Green Bay,Madison,Oshkosh
+Wyoming
+Cheyenne
